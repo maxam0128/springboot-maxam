@@ -1,0 +1,17 @@
+Configuration:
+  status: warn
+  appenders:
+    Console:
+      name: Console
+      target: SYSTEM_OUT
+      PatternLayout:
+        Pattern: "%clr{%d{yyyy-MM-dd HH:mm:ss.SSS}}{faint} %clr{%5p} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40c}{cyan} %clr{:}{faint} %m%n%xwEx"
+  Loggers:
+    Root:
+      AppenderRef:
+        - ref: Console
+    logger:
+      - name: org.springframework
+        level: error
+      - name: org.mybatis.spring
+        level: error
